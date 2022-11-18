@@ -9,7 +9,9 @@ export default function ProfileApp() {
         username={User.username}
         tag={User.tag}
         location={User.location}
-        stats={User.stats}
+        followers={User.stats.followers}
+        views={User.stats.views}
+        likes={User.stats.likes}
       />
     </div>
   );
