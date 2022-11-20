@@ -11,20 +11,14 @@ export default function FriendListApp() {
   return (
     <Wrapper>
       {friends.map(friend => (
-        <>
-          <Item key={friend.id}>
-            {friend.isOnline ? (
-              <UserStatusOn></UserStatusOn>
-            ) : (
-              <UserStatusOff></UserStatusOff>
-            )}
-            <FriendListItem
-              avatar={friend.avatar}
-              name={friend.name}
-              isOnline={friend.isOnline}
-            />
-          </Item>
-        </>
+        <Item key={friend.id}>
+          {friend.isOnline ? <UserStatusOn /> : <UserStatusOff />}
+          <FriendListItem
+            avatar={friend.avatar}
+            name={friend.name}
+            isOnline={friend.isOnline}
+          />
+        </Item>
       ))}
     </Wrapper>
   );
