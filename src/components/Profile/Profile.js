@@ -1,4 +1,13 @@
 import PropTypes from 'prop-types';
+import {
+  ProfileWrap,
+  Avatar,
+  UserName,
+  UserInfo,
+  Stats,
+  UserLabel,
+  UserQuantity,
+} from './Profile.styled';
 
 export default function UserProfile({
   avatar,
@@ -10,29 +19,29 @@ export default function UserProfile({
   likes,
 }) {
   return (
-    <div class="profile">
-      <div class="description">
-        <img src={avatar} alt="User avatar" class="avatar" />
-        <p class="name">{username}</p>
-        <p class="tag">@{tag}</p>
-        <p class="location">{location}</p>
+    <ProfileWrap>
+      <div className="description">
+        <Avatar src={avatar} alt="User avatar" />
+        <UserName>{username}</UserName>
+        <UserInfo>@{tag}</UserInfo>
+        <UserInfo>{location}</UserInfo>
       </div>
 
-      <ul class="stats">
+      <Stats key={username}>
         <li>
-          <span class="label">Followers</span>
-          <span class="quantity">{followers}</span>
+          <UserLabel>Followers:</UserLabel>
+          <UserQuantity>{followers}</UserQuantity>
         </li>
         <li>
-          <span class="label">Views</span>
-          <span class="quantity">{views}</span>
+          <UserLabel>Views:</UserLabel>
+          <UserQuantity>{views}</UserQuantity>
         </li>
         <li>
-          <span class="label">Likes</span>
-          <span class="quantity">{likes}</span>
+          <UserLabel>Likes:</UserLabel>
+          <UserQuantity>{likes}</UserQuantity>
         </li>
-      </ul>
-    </div>
+      </Stats>
+    </ProfileWrap>
   );
 }
 

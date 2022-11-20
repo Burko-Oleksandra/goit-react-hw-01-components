@@ -2,11 +2,7 @@ import TransactionHistory from './TransactionHistory';
 import transactions from 'components/TransactionHistory/transactions.json';
 
 export default function TransactionHistoryApp() {
-  return (
-    <>
-      <TransactionHistory transactions={transactions} />
-    </>
-  );
+  return <TransactionHistory items={transactions} />;
 }
 
 // export default function TransactionHistoryApp() {
