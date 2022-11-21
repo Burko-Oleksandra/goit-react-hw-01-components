@@ -8,7 +8,15 @@ import TransactionHistoryApp from './components/TransactionHistory/TransactionHi
 export const App = () => {
   return (
     <Wrapper>
-      <ProfileApp />
+      <UserProfile
+        avatar={User.avatar}
+        username={User.username}
+        tag={User.tag}
+        location={User.location}
+        followers={User.stats.followers}
+        views={User.stats.views}
+        likes={User.stats.likes}
+      />
       <StatisticsApp />
       <FriendListApp />
       <TransactionHistoryApp />
